@@ -11,4 +11,4 @@ The tagger library used here is nltk(Natural Language Toolkit)
 ---------------------------------------------------------------------------------------------------------------
 
 Run the python app (app.py) in your terminal to use the tagger to identify the parts of speech
-	  python app.py
+  python app.py
