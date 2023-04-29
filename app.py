@@ -28,12 +28,14 @@ def analyze():
     # Get the input sentence from the form
     sentence = request.form['sentence']
 
+    # Exclude non-alphabetic characters from the sentence
+    sentence = ''.join(c for c in sentence if c.isalpha() or c.isspace())
+
     # Tokenize sentence into words
     tokens = nltk.word_tokenize(sentence)
 
     # Tag the parts of speech in the sentence
     pos_tags = nltk.pos_tag(tokens)
-
     # Create a dictionary to map part-of-speech tags to their full forms
     pos_map = {
         'CC': 'Conjunction',
@@ -72,39 +74,7 @@ def analyze():
         'WP': 'Pronoun',
         'WP$': 'Pronoun',
         'WRB': 'Adverb',
-        '.': 'PUNCT',
-        ',': 'PUNCT',
-        ':': 'PUNCT',
-        ';': 'PUNCT',
-        '?': 'PUNCT',
-        '!': 'PUNCT',
-        '(': 'PUNCT',
-        ')': 'PUNCT',
-        '[': 'PUNCT',
-        ']': 'PUNCT',
-        '{': 'PUNCT',
-        '}': 'PUNCT',
-        '\"': 'PUNCT',
-        '\'': 'PUNCT',
-        '-': 'PUNCT',
-        '--': 'PUNCT',
-        '_': 'PUNCT',
-        '/': 'PUNCT',
-        '\\': 'PUNCT',
-        '@': 'PUNCT',
-        '#': 'PUNCT',
-        '$': 'PUNCT',
-        '%': 'PUNCT',
-        '^': 'PUNCT',
-        '&': 'PUNCT',
-        '*': 'PUNCT',
-        '+': 'PUNCT',
-        '=': 'PUNCT',
-        '<': 'PUNCT',
-        '>': 'PUNCT',
-        '|': 'PUNCT',
-        '`': 'PUNCT',
-        '~': 'PUNCT'
+       
     }
 
     # Replace part-of-speech tags with their full forms
