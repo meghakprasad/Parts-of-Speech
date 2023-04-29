@@ -7,3 +7,8 @@ This sentence is cross verified with the existing database and inserted into the
 To run the project We have used Python, Flask, Xampp server,HTML,CSS
 
 The tagger library used here is nltk(Natural Language Toolkit)
+
+---------------------------------------------------------------------------------------------------------------
+
+Run the python app (app.py) in your terminal to use the tagger to identify the parts of speech
+	  python app.py
